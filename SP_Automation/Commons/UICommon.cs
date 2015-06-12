@@ -36,9 +36,18 @@ namespace SP_Automation.Commons
 
         public static void elementHighlight(IWebElement element, IWebDriver d)
         {
-            var jsDriver = (IJavaScriptExecutor)d;
-            string highlightJavascript = @"$(arguments[0]).css({ ""border-width"" : ""2px"", ""border-style"" : ""solid"", ""border-color"" : ""red"" });";
-            jsDriver.ExecuteScript(highlightJavascript, new object[] { element });
+           if (element.TagName != "a")
+            {
+                var jsDriver = (IJavaScriptExecutor)d;
+                string highlightJavascript = @"$(arguments[0]).css({ ""border-width"" : ""2px"", ""border-style"" : ""solid"", ""border-color"" : ""red"" });";
+                jsDriver.ExecuteScript(highlightJavascript, new object[] { element });
+            }
+        }
+
+        internal static void ClickLink(By by, IWebDriver d)
+        {
+            IWebElement elem = GetElement(by, d);
+            elem.Click();
         }
     }
 }

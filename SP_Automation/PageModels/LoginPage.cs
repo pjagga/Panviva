@@ -17,14 +17,14 @@ namespace SP_Automation.PageModels
         {
             this.d = driver; 
             //Wait for title to be displayed 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime)); 
-            wait.Until((d) => { return d.Title.Contains("CPA Australia - Sign in or create an account"); }); 
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until((d) => { return d.Title.Contains("Login : SupportPoint"); }); 
 
         }
 
-        public void SetCustomerID(string customerID)
+        public void SetUserName(string username)
         {
-            UICommon.SetValue(By.Id("UserName"), customerID, d);
+            UICommon.SetValue(By.Id("UserName"), username, d);
         }
 
         public void SetPassword(string password)
@@ -32,7 +32,7 @@ namespace SP_Automation.PageModels
             UICommon.SetValue(By.Id("Password"), password, d);
         }
 
-        public void ClickSubmitButton()
+        public void ClickLogOnButton()
         {
             UICommon.ClickButton(By.XPath("//button[@type='submit']"), d);
 

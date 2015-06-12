@@ -52,6 +52,7 @@ namespace SP_Automation.Tests
             {
                 case BrowserType.IE:
                     KillProcess("iexplorer.exe");
+                    KillProcess("IEDriverServer.exe");
                     break;
                 case BrowserType.Chrome:
                     KillProcess("chrome.exe");
@@ -60,6 +61,11 @@ namespace SP_Automation.Tests
                     throw new ArgumentException("Browser Type Invalid");
 
             }
+        }
+
+        public static void SetDriver()
+        {
+
         }
 
         public static void KillProcess(string processName)

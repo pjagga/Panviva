@@ -9,28 +9,26 @@ using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels
 {
-    class HomePage : BasePage
+    class CertificateErrorPage : BasePage
     {
         IWebDriver d;
-        public HomePage(IWebDriver driver)
+        public CertificateErrorPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver;
+            this.d = driver; 
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("Home : SupportPoint"); }); 
+            wait.Until((d) => { return d.Title.Contains("Certificate Error: Navigation Blocked"); }); 
+
         }
 
-        public void ClickLoginButton()
+        
+
+        public void ClickContinueLink()
         {
-            UICommon.ClickButton(By.Id("login_btn"), d);
+            UICommon.ClickLink(By.Id("overridelink"), d);
 
         }
-
-
-        internal void ClickLogOutButton()
-        {
-            UICommon.ClickButton(By.Id("logout_btn"), d);
-        }
+        
     }
 }

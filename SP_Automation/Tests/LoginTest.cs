@@ -23,17 +23,14 @@ namespace SP_Automation.Tests
         {
 
             //Log on to site as user.
-            Assert.IsTrue(driver.Title == "CPA Australia - Home");
-            HomePage homePage = new HomePage(driver);
-            homePage.ClickLoginButton();
+            CertificateErrorPage certificateErrorPage = new CertificateErrorPage(driver);
+            certificateErrorPage.ClickContinueLink();
             LoginPage loginPage = new LoginPage(driver);
-            Assert.IsTrue(driver.Title == "CPA Australia - Sign in or create an account");
-            loginPage.SetCustomerID("9822090");
-            loginPage.SetPassword("01Password");
-            loginPage.ClickSubmitButton();
-            Assert.IsTrue(driver.Title == "CPA Australia - Home");
-            homePage.ClickLogOutButton();
-
+            loginPage.SetUserName("Paul");
+            loginPage.SetPassword("p");
+            loginPage.ClickLogOnButton();
+            HomePage homePage = new HomePage(driver);
+            
         }
 
     }
