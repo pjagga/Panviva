@@ -25,7 +25,7 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("QA_A")]
+        [global::System.Configuration.DefaultSettingValueAttribute("QA_B")]
         public global::SP_Automation.Environments.EnvironmentType Environment {
             get {
                 return ((global::SP_Automation.Environments.EnvironmentType)(this["Environment"]));
@@ -37,7 +37,7 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("IE")]
+        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebkit")]
         public global::SP_Automation.Environments.BrowserType Browser {
             get {
                 return ((global::SP_Automation.Environments.BrowserType)(this["Browser"]));

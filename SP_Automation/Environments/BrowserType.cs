@@ -13,6 +13,8 @@ namespace SP_Automation.Environments
         IE = 0,
         [Description("Chrome")]
         Chrome = 1,
+        [Description("NodeWebkit")]
+        NodeWebkit = 2,
         
 
     }

@@ -2,8 +2,10 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SP_Automation.Commons
@@ -48,6 +50,35 @@ namespace SP_Automation.Commons
         {
             IWebElement elem = GetElement(by, d);
             elem.Click();
+        }
+
+
+        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string BaseWindow, string title)
+        {
+            string NewWindow; //prepares for the new window handle
+            ReadOnlyCollection<string> handles = null;
+            for (int i = 1; i < 30; i++)
+            {
+                if (d.WindowHandles.Count == 1)
+                { Thread.Sleep(2000); }
+                else { break; }
+            }
+            handles = d.WindowHandles;
+
+
+            foreach (string handle in handles)
+            {
+                //var Handles = handle;
+                if (BaseWindow != handle)
+                {
+                    NewWindow = handle;
+                    if (d.SwitchTo().Window(handle).Title.Contains(title))
+                    {
+                        return d;
+                    }
+                }
+            } throw new Exception("Error switching to new browser");
+
         }
     }
 }

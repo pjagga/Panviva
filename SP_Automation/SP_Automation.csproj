@@ -71,6 +71,7 @@
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
     <Compile Include="PageModels\BasePage.cs" />
+    <Compile Include="PageModels\InitialPage.cs" />
     <Compile Include="PageModels\HomePage.cs" />
     <Compile Include="PageModels\CertificateErrorPage.cs" />
     <Compile Include="PageModels\LoginPage.cs" />

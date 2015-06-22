@@ -37,6 +37,23 @@ namespace SP_Automation.PageModels
             UICommon.ClickButton(By.XPath("//button[@type='submit']"), d);
 
         }
+
+
+        public void ConfirmWarningMessage(string warningMessage)
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            IList<IWebElement> messages = d.FindElements(By.Id("qtip-Warning-content"));
+            if (messages.Count != 0)
+            {
+                IWebElement elem = UICommon.GetElement(By.Id("qtip-Warning-content"), d);
+                if(elem.Text == warningMessage)
+                {
+                    UICommon.ClickButton(By.Id("okTitle"), d);
+                }
+               
+            }
+        }
+
         
     }
 }

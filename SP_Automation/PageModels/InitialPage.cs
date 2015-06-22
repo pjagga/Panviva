@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels
 {
-    class CertificateErrorPage : BasePage
+    class InitialPage : BasePage
     {
         IWebDriver d;
-        public CertificateErrorPage(IWebDriver driver)
+        public InitialPage(IWebDriver driver)
             : base(driver)
         {
             this.d = driver; 
@@ -22,13 +22,6 @@ namespace SP_Automation.PageModels
 
         }
 
-        
-
-        public void ClickContinueLink()
-        {
-            UICommon.ClickLink(By.Id("overridelink"), d);
-
-        }
         
     }
 }
