@@ -32,5 +32,19 @@ namespace SP_Automation.PageModels
         {
             UICommon.ClickButton(By.Id("logout_btn"), d);
         }
+
+        internal void ClickFolderNavButton()
+        { 
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until(drv => drv.FindElement(By.XPath("//div[@class='loadmask']")));
+            UICommon.ClickButton(By.Id("Folder"), d);
+        }
+
+        internal bool GetWelcomeTitleDisplayProperty()
+        {
+            IWebElement elem = UICommon.GetElement(By.XPath("//div[@class='active tab-pane']/p/span/img[contains(@alt,'SupportPoint Image')]"),d);
+            return elem.Displayed;
+        }
+
     }
 }

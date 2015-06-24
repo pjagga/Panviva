@@ -82,6 +82,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Tests\BaseTest.cs" />
+    <Compile Include="PageModels\FoldersPage.cs" />
+    <Compile Include="Tests\PoCTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +91,9 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\PaulTests.orderedtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

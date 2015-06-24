@@ -54,6 +54,11 @@ namespace SP_Automation.PageModels
             }
         }
 
-        
+
+
+        internal void GetObjValue()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

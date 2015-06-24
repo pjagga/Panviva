@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace SP_Automation.Tests
 {
     [TestClass]
-    public class LoginTest : BaseTest
+    public class PoCTest : BaseTest
     {
-        public LoginTest()
+        public PoCTest()
         {
 
         }
@@ -21,7 +21,7 @@ namespace SP_Automation.Tests
 
         [TestCategory("Regression")]
         [TestMethod]
-        public void SuccessfulLogin()
+        public void SupportPointDoStuff()
         {
 
             //Log on to site as user.
@@ -32,9 +32,11 @@ namespace SP_Automation.Tests
             loginPage.SetUserName("Paul");
             loginPage.SetPassword("p");
             loginPage.ClickLogOnButton();
-            //loginPage.GetObjValue();
             HomePage homePage = new HomePage(driver);
-            
+            Assert.IsTrue(homePage.GetWelcomeTitleDisplayProperty());
+            homePage.ClickFolderNavButton();
+            FoldersPage foldersPage = new FoldersPage(driver);
+            Assert.IsTrue(foldersPage.GetFoldersDisplayProperty());
         }
 
     }
